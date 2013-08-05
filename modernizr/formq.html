@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width"/>
+	<title>Usos de Modernizr - input Date</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="js/modernizr.js"></script>
+</head>
+<body>
+	<header id="ejemplos">
+		<div class="contenedor">
+			<h1>Modernizr</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="http://modernizr.com/" target="_blank">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="index.html">CSS</a>
+					</li>
+					<li>
+						<a href="html5.html">Geolocalización</a>
+					</li>
+					<li class="active">
+						<a href="form.html">input Date</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="clear"></div>
+		</div>		
+	</header>
+	<section id="cotenido">
+		<div class="contenedor">
+			<h2>Formularios</h2>
+			<div id='formulario'>
+				<label for="fecha">Fecha:</label>
+				<input type="date" name="fecha" id="fecha">
+				<p>En caso de que el navegador no soporte el input date, carga con datepicker de jQueryUI</p>
+			</div>	
+			<h2>Soporte de tu navegador</h2>
+			<div class="soporte"></div>
+		</div>
+	</section>
+	<footer>
+		<div class="contenedor">
+			<h2>By Pau Velez</h2>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script>
+		// Date
+		var display;
+		if (!Modernizr.inputtypes.date) {
+			display = "<h1 class='mensaje'>tu navegador no soporta input date</h1>";
+
+			$.getScript("http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js",  
+				function () { 
+					var css = jQuery("<link>");
+					css.attr({ rel:  "stylesheet",
+					type: "text/css",
+					href: "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/pepper-grinder/jquery-ui.min.css"
+				});
+				       $("head").append(css);
+				       $("#fecha").datepicker();
+				});
+		}else{
+			display = "<h1 class='mensaje'>tu navegador soporta input date</h1>"
+
+		}
+		$('#cotenido').prepend($(display).fadeIn())
+    		var slideUp = setTimeout(function () {
+    			$('.mensaje').slideUp();
+    		}, 1000)
+
+    	$.each(Modernizr.inputtypes ,function(input , value){
+    		$('.soporte').append(input +" "+value+ "<br/>");
+    	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+body{
+	background: rgba(230, 200, 240, 0.3);
+	font-family: Lucida Console; 
+}
+
+h1, h2, h3{
+	color: rgba(190, 40, 160, 0.5);
+}

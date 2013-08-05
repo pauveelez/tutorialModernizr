@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Usos de Modernizr</title>
+	
+	<script src="modernizr.js"></script>
+	<script src="jquery.js"></script>
+
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+	<h1>Modernizr</h1>
+
+	<h2>Caracteristicas de tu navegador</h2>
+	<div id="lista"></div>
+
+	<h2>Soporte de inputs</h2>
+	<div id="inputs"></div>
+
+	<h3>by @pauveelez</h3>
+
+	<script>
+
+		if(Modernizr.geolocation)
+			$('#lista').append("geolocation : true </br>");
+		else
+			$('#lista').append("geolocation : false </br>");
+
+		if(Modernizr.video)
+			$('#lista').append("video : true </br>");
+		else
+			$('#lista').append("video : false </br>");
+
+		if(Modernizr.fontface)
+			$('#lista').append("fontface : true </br>");
+		else
+			$('#lista').append("fontface : false </br>");
+
+		$.each(Modernizr.inputtypes, function(input , value){
+			$('#inputs').append(input+" : "+value+"</br>");
+		})
+
+
+	</script>
+	
+</body>
+</html>

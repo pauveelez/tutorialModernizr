@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- La clase no-js es para mostrar como modernizer solito agrega clases indicando las capacidades de la versión del motor de búsqueda-->
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width"/>
+	<title>Usos de Modernizr - HTML</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="js/modernizr.js"></script>
+</head>
+<body>
+	<header id="ejemplos">
+		<div class="contenedor">
+			<h1>Modernizr</h1>
+			<nav>
+				<ul>
+					<li>
+						<a href="http://modernizr.com/" target="_blank">
+							Home
+						</a>
+					</li>
+					<li>
+						<a href="index.html">CSS</a>
+					</li>
+					<li>
+						<a href="html5.html">HTML</a>
+					</li>
+					<li>
+						<a href="form.html">input Date</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="clear"></div>
+		</div>		
+	</header>
+	<section id="cotenido">
+		<div class="contenedor">
+			<h2>Geolocalizacion</h2>
+			<div id='map_canvas'></div>			
+		</div>
+	</section>
+	<footer>
+		<div class="contenedor">
+			<h2>By Pau Velez</h2>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.gmap.js"></script> 
+    <script type="text/javascript" src="js/funcionesGmap.js"></script>
+    <script>
+    	if (Modernizr.geolocation) {
+    		alert('Tu Navegador soporta Geolocalizacion ^.^');
+		} else {
+			alert('Oops! Tu navegador no soporta geolocalización. Bájate Chrome, que es gratis!');
+			$('#map_canvas').html('<img src="img2.jpg">')		    
+		}
+    </script>
+</body>
+</html>
