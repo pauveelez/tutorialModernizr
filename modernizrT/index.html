@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"/>
 	<title>Usos de Modernizr</title>
 	
 	<script src="modernizr.js"></script>
@@ -24,22 +24,22 @@
 	<script>
 
 		if(Modernizr.geolocation)
-			$('#lista').append("geolocation : true </br>");
+			$('#lista').append("geolocation : true <br/>");
 		else
-			$('#lista').append("geolocation : false </br>");
+			$('#lista').append("geolocation : false <br/>");
 
 		if(Modernizr.video)
-			$('#lista').append("video : true </br>");
+			$('#lista').append("video : true <br/>");
 		else
-			$('#lista').append("video : false </br>");
+			$('#lista').append("video : false <br/>");
 
 		if(Modernizr.fontface)
-			$('#lista').append("fontface : true </br>");
+			$('#lista').append("fontface : true <br/>");
 		else
-			$('#lista').append("fontface : false </br>");
+			$('#lista').append("fontface : false <br/>");
 
 		$.each(Modernizr.inputtypes, function(input , value){
-			$('#inputs').append(input+" : "+value+"</br>");
+			$('#inputs').append(input+" : "+value+"<br/>");
 		})
 
 
